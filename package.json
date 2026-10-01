@@ -1,0 +1,26 @@
+{
+  "name": "rohingya-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Hanifi Rohingya ↔ Rohingyalish script converter and Rohingya Reader Chrome extension.",
+  "license": "MIT",
+  "homepage": "https://rohingyalanguage.org/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abahziz0/rohingya-tools.git"
+  },
+  "bugs": { "url": "https://github.com/abahziz0/rohingya-tools/issues" },
+  "engines": { "node": ">=24.15.0" },
+  "workspaces": ["converter", "extension"],
+  "scripts": {
+    "build": "npm run build --workspace converter && npm run build --workspace extension",
+    "check": "npm run build --workspace converter && npm run check --workspace extension",
+    "test": "npm test --workspace extension",
+    "test:e2e": "npm run test:e2e --workspace extension",
+    "fixtures": "npm run fixtures --workspace extension",
+    "fixtures:serve": "npm run fixtures:serve --workspace extension",
+    "package": "npm run package --workspace extension"
+  },
+  "keywords": ["rohingya", "hanifi", "rohingyalish", "script-converter", "transliteration", "romanization", "chrome-extension", "unicode", "typescript"]
+}

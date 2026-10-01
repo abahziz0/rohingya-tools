@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editable fields and code — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Editable fields and code stay unchanged</h1>
+  <p id="plain">Plain text converts: 𐴑𐴞𐴃𐴝𐴁 𐴉𐴟𐴤𐴓</p>
+  <p><label>Input <input id="input" value="𐴑𐴞𐴃𐴝𐴁"></label></p>
+  <p><label>Textarea <textarea id="textarea">𐴉𐴝𐴕𐴞𐴤 𐴒𐴡𐴤𐴌</textarea></label></p>
+  <div id="editable" contenteditable="true" class="box">Rich-text editor: 𐴎𐴟𐴁𐴝𐴕 <b>𐴓𐴠𐴑</b></div>
+  <div id="textbox" role="textbox" aria-label="Custom text box" class="box">𐴕𐴝𐴔</div>
+  <pre id="pre">𐴆𐴝𐴤𐴕𐴃𐴞 (preformatted)</pre>
+  <p>Inline code: <code id="code">𐴑𐴞𐴃𐴝𐴁</code> <kbd id="kbd">𐴉𐴟𐴤𐴓</kbd></p>
+  <p><label>Select <select id="select"><option>𐴔𐴝𐴥</option><option>𐴉𐴟𐴝</option></select></label></p>
+  <script id="data" type="application/json">{"word": "𐴑𐴞𐴃𐴝𐴁"}</script>
+  <style>.fixture-style::after { content: "𐴉𐴝𐴕𐴞𐴤"; }</style>
+  <p class="fixture-style" id="styled">Generated content (CSS) stays Hanifi: </p>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Large page — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Large page (5,000 paragraphs)</h1>
+  <p>Generated: <output id="generated">0</output> paragraphs.</p>
+  <div id="rows"></div>
+</main>
+<script>
+
+const WORDS = ["𐴑𐴞𐴃𐴝𐴁", "𐴉𐴟𐴤𐴓", "𐴉𐴝𐴕𐴞𐴤", "𐴒𐴡𐴤𐴌", "𐴀𐴠𐴏𐴑𐴟𐴓", "𐴎𐴟𐴁𐴝𐴕", "𐴔𐴝𐴕𐴟𐴤𐴞𐴆", "𐴌𐴝𐴏𐴃𐴝"];
+const rows = document.getElementById('rows');
+const frag = document.createDocumentFragment();
+for (let i = 0; i < 5000; i++) {
+  const p = document.createElement('p');
+  p.innerHTML = (i + 1) + '. ' + WORDS[i % 8] + ' <a href="#r' + i + '">' + WORDS[(i + 3) % 8] + '</a> English ' + WORDS[(i + 5) % 8];
+  frag.append(p);
+}
+rows.append(frag);
+document.getElementById('generated').textContent = '5000';
+</script>
+</body>
+</html>

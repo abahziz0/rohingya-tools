@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dist-test/
+release/
+test-results/
+playwright-report/
+.e2e-profile*/

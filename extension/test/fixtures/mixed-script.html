@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mixed scripts, links and markup — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Mixed-script article</h1>
+  <p id="mixed">The Rohingya word 𐴑𐴞𐴃𐴝𐴁 means “book”. Arabic: كتاب. Bengali: বই. Emoji: 📚✨. Number: 𐴲𐴰𐴲𐴶.</p>
+  <p id="with-link">Learn about 𐴎𐴟𐴁𐴝𐴕 on the <a id="lang-link" href="#lang">𐴎𐴟𐴁𐴝𐴕 page</a> (link clicks: <output id="clicks">0</output>).</p>
+  <p id="nested"><strong>𐴉𐴟𐴤𐴓</strong>, <em>𐴒𐴝𐴏 <a href="#fish">𐴔𐴝𐴏</a></em> and <mark>𐴉𐴝𐴕𐴞𐴤</mark>.</p>
+  <ul id="list"><li>𐴔𐴝𐴥</li><li>𐴉𐴟𐴝</li><li>English only</li></ul>
+  <table id="table"><thead><tr><th>English</th><th>Rohingya</th></tr></thead>
+    <tbody><tr><td>house</td><td>𐴒𐴡𐴤𐴌</td></tr><tr><td>village</td><td>𐴉𐴝𐴌𐴝</td></tr><tr><td>road</td><td>𐴌𐴝𐴏𐴃𐴝</td></tr></tbody></table>
+  <p id="attrs"><abbr title="𐴕𐴝𐴔">𐴕𐴝𐴔</abbr> <img alt="𐴉𐴝𐴕𐴞𐴤" title="𐴉𐴝𐴕𐴞𐴤" width="1" height="1" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="> — attributes (title, alt) stay unchanged in this release.</p>
+  <p id="button-row"><button id="btn" type="button">𐴉𐴡𐴌𐴝𐴤</button> <label><input type="checkbox"> 𐴓𐴠𐴑</label></p>
+</main>
+<script>
+
+document.getElementById('lang-link').addEventListener('click', e => {
+  e.preventDefault();
+  const o = document.getElementById('clicks');
+  o.textContent = String(Number(o.textContent) + 1);
+});
+</script>
+</body>
+</html>

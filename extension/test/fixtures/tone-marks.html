@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tone marks and unsupported characters — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Tone marks, digits and unsupported characters</h1>
+  <p>The <code>code</code> column is not converted by the extension, so you can compare it with the converted Hanifi column.</p>
+  <table>
+    <thead><tr><th>Case</th><th>Hanifi</th><th>Engine output</th></tr></thead>
+    <tbody>
+      <tr><td>Harbahay (stress, shown as acute)</td><td id="t1">𐴉𐴟𐴤𐴓</td><td><code>fúl</code></td></tr>
+      <tr><td>Tahala (long vowel, doubled)</td><td id="t2">𐴔𐴝𐴥</td><td><code>maa</code></td></tr>
+      <tr><td>Tana (approximated with acute; warns)</td><td id="t3">𐴑𐴝𐴦</td><td><code>ká</code></td></tr>
+      <tr><td>Tassi (doubled consonant)</td><td id="t4">𐴑𐴧𐴝</td><td><code>kka</code></td></tr>
+      <tr><td>Na khonna (nasalisation)</td><td id="t5">𐴏𐴝𐴣</td><td><code>sañ</code></td></tr>
+      <tr><td>Sakin (dropped: no Latin equivalent)</td><td id="t6">𐴑𐴢</td><td><code>k</code></td></tr>
+      <tr><td>Kinna wa / kinna ya (same as wa / ya)</td><td id="t7">𐴗𐴝𐴙𐴝</td><td><code>waya</code></td></tr>
+      <tr><td>Stray tone sign (skipped; warns)</td><td id="t8">x 𐴤</td><td><code></code></td></tr>
+      <tr><td>Unassigned code point U+10D28 (kept; warns)</td><td id="t9">𐴑𐴝𐴨</td><td><code>ka𐴨</code></td></tr>
+      <tr><td>Hanifi digits</td><td id="t10">𐴱𐴹𐴴𐴷</td><td><code>1947</code></td></tr>
+      <tr><td>Arabic punctuation used with Hanifi (kept)</td><td id="t11">𐴑𐴞𐴃𐴝𐴁، 𐴉𐴟𐴤𐴓؟ 𐴉𐴝𐴕𐴞𐴤۔</td><td><code>kitab، fúl؟ faní۔</code></td></tr>
+    </tbody>
+  </table>
+</main>
+
+</body>
+</html>

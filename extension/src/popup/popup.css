@@ -1,0 +1,159 @@
+/* Rohingya Reader popup — brand colours from rohingyalanguage.org */
+
+@font-face {
+  font-family: 'Noto Sans Hanifi Rohingya';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSansHanifiRohingya-Regular.woff2') format('woff2');
+  unicode-range: U+060C, U+061B, U+061F, U+0640, U+06D4, U+200C-200D, U+25CC, U+10D00-10D3F;
+}
+
+:root {
+  --green: #1a5c1a;
+  --green-dark: #134513;
+  --green-soft: #ecf5ec;
+  --gold: #c9a227;
+  --gold-soft: #fbf5e2;
+  --gold-text: #7a5f0c;
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #4b5563;
+  --border: #d9dcd6;
+  --focus: #1a5c1a;
+  --neutral-soft: #f1f2ef;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --green: #7cc47c;
+    --green-dark: #9ad69a;
+    --green-soft: #1d2e1d;
+    --gold: #e0bd4f;
+    --gold-soft: #2e2813;
+    --gold-text: #ecd488;
+    --bg: #161816;
+    --surface: #1f221f;
+    --text: #f1f2ef;
+    --muted: #b8bdb5;
+    --border: #3a3f39;
+    --focus: #9ad69a;
+    --neutral-soft: #272a26;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  width: 360px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.45 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.popup { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand h1 { margin: 0; font-size: 16px; line-height: 1.2; color: var(--green); }
+.tagline { margin: 2px 0 0; font-size: 12.5px; color: var(--muted); }
+
+/* ---- status ---- */
+.status {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 12px; border-radius: 10px;
+  background: var(--neutral-soft); border: 1px solid var(--border);
+}
+.status-dot { flex: none; width: 10px; height: 10px; margin-top: 5px; border-radius: 50%; background: var(--muted); }
+.status-title { margin: 0; font-weight: 650; }
+.status-detail { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.status-detail:empty { display: none; }
+.status[data-tone='ready'] { background: var(--gold-soft); border-color: var(--gold); }
+.status[data-tone='ready'] .status-dot { background: var(--gold); }
+.status[data-tone='on'] { background: var(--green-soft); border-color: var(--green); }
+.status[data-tone='on'] .status-dot { background: var(--green); }
+.status[data-tone='warn'] { background: var(--gold-soft); border-color: var(--gold); }
+.status[data-tone='warn'] .status-dot { background: transparent; border: 2px solid var(--gold-text); }
+
+/* ---- buttons ---- */
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.btn {
+  font: inherit; font-weight: 600; cursor: pointer;
+  min-height: 40px; padding: 8px 12px; border-radius: 8px;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--green); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: var(--green-dark); }
+.btn-secondary { background: var(--surface); color: var(--green); border-color: var(--green); }
+.btn-secondary:hover:not(:disabled) { background: var(--green-soft); }
+.btn-small { min-height: 34px; padding: 6px 12px; justify-self: start; }
+.btn:disabled { cursor: not-allowed; background: var(--neutral-soft); color: var(--muted); border-color: var(--border); }
+@media (prefers-color-scheme: dark) {
+  .btn-primary { color: #0f1a0f; }
+}
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+.btn:focus-visible { border-radius: 8px; }
+
+.hint { margin: 0; color: var(--muted); font-size: 12.5px; }
+.hint:empty { display: none; }
+
+/* ---- always convert ---- */
+.site {
+  display: grid; gap: 8px;
+  padding: 12px; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.site[hidden] { display: none; }
+.switch-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.switch-text { display: flex; flex-direction: column; cursor: pointer; min-width: 0; }
+.switch-label { font-weight: 600; }
+.site-host { font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+
+.switch {
+  appearance: none; flex: none; cursor: pointer; margin: 0;
+  position: relative; width: 44px; height: 26px; border-radius: 13px;
+  background: var(--border); border: 1px solid var(--muted);
+  transition: background-color 120ms ease;
+}
+.switch::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+  transition: transform 120ms ease;
+}
+.switch:checked { background: var(--green); border-color: var(--green); }
+.switch:checked::after { transform: translateX(18px); }
+.switch:disabled { opacity: 0.5; cursor: not-allowed; }
+.switch:focus-visible { border-radius: 13px; }
+@media (prefers-reduced-motion: reduce) {
+  .switch, .switch::after { transition: none; }
+}
+
+/* ---- notes ---- */
+.notes { border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.notes[hidden] { display: none; }
+.notes summary { cursor: pointer; padding: 10px 12px; font-weight: 600; color: var(--gold-text); }
+.notes[open] summary { border-bottom: 1px solid var(--border); }
+.notes-intro { margin: 10px 12px 0; font-size: 12.5px; color: var(--muted); }
+.notes-list { list-style: none; margin: 0; padding: 8px 12px 12px; display: grid; gap: 10px; max-height: 220px; overflow-y: auto; }
+.note-heading { margin: 0 0 4px; font-size: 13px; font-weight: 600; }
+.note-example { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin: 2px 0; font-size: 13px; }
+.hanifi { font-family: 'Noto Sans Hanifi Rohingya', sans-serif; font-size: 16px; }
+.note-arrow { color: var(--muted); }
+.note-tech { margin: 4px 0 0; font-size: 11.5px; color: var(--muted); }
+
+/* ---- footer ---- */
+.footer { display: grid; gap: 6px; padding-top: 4px; border-top: 1px solid var(--border); }
+.privacy { margin: 8px 0 0; display: flex; gap: 6px; align-items: flex-start; font-size: 12.5px; color: var(--muted); }
+.privacy svg { flex: none; margin-top: 2px; color: var(--green); }
+.link { color: var(--green); font-weight: 600; font-size: 13px; text-underline-offset: 2px; }
+.link:hover { color: var(--green-dark); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

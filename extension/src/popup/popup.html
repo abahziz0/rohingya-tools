@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohingya Reader</title>
+  <link rel="stylesheet" href="popup.css" />
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <main class="popup">
+    <header class="brand">
+      <img src="../icons/icon-48.png" width="32" height="32" alt="" />
+      <div>
+        <h1>Rohingya Reader</h1>
+        <p class="tagline">Read Hanifi webpages in Rohingyalish</p>
+      </div>
+    </header>
+
+    <section id="status" class="status" data-tone="neutral" role="status" aria-live="polite" aria-atomic="true">
+      <span class="status-dot" aria-hidden="true"></span>
+      <div>
+        <p id="status-title" class="status-title">Checking this page…</p>
+        <p id="status-detail" class="status-detail"></p>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="convert" class="btn btn-primary" type="button" disabled>Convert this page</button>
+      <button id="original" class="btn btn-secondary" type="button" disabled aria-describedby="original-hint">Show original</button>
+    </div>
+    <p id="original-hint" class="hint">Show original switches this page back to Hanifi. It does not change your website setting.</p>
+
+    <section id="site" class="site" aria-labelledby="always-label" hidden>
+      <div class="switch-row">
+        <label for="always" class="switch-text">
+          <span id="always-label" class="switch-label">Always convert this website</span>
+          <span id="site-host" class="site-host"></span>
+        </label>
+        <input id="always" class="switch" type="checkbox" role="switch" aria-describedby="site-detail" />
+      </div>
+      <p id="site-detail" class="hint" aria-live="polite"></p>
+      <button id="grant" class="btn btn-secondary btn-small" type="button" hidden>Allow website access</button>
+    </section>
+
+    <details id="notes" class="notes" hidden>
+      <summary id="notes-summary">About this conversion</summary>
+      <p class="notes-intro">
+        The converter follows common spelling conventions, so some words may not match
+        how you would spell them. Choose <strong>Show original</strong> to compare with the Hanifi text.
+      </p>
+      <ul id="notes-list" class="notes-list" tabindex="0" aria-label="Conversion notes"></ul>
+    </details>
+
+    <footer class="footer">
+      <p class="privacy">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4 15h8a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12 6h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5H6V4.5a2 2 0 1 1 4 0V6Z"/></svg>
+        Conversion happens on your device. Page text is not sent anywhere.
+      </p>
+      <a id="converter-link" class="link" href="https://rohingyalanguage.org/tools/script-converter/" target="_blank" rel="noopener">
+        Open the online script converter<span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+    </footer>
+  </main>
+</body>
+</html>

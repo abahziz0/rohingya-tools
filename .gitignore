@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-test/
+release/
+test-results/
+playwright-report/
+.e2e-profile*/
+.DS_Store
+.env
+.env.*
+*.log

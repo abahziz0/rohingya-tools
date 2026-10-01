@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iframes and shadow DOM — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Iframes and shadow DOM (not converted in this release)</h1>
+  <p id="top">Top-level page text converts: 𐴑𐴞𐴃𐴝𐴁</p>
+  <p>Same-origin iframe:</p>
+  <iframe id="frame" title="Iframe fixture" srcdoc="<p id='inner'>𐴉𐴟𐴤𐴓 𐴉𐴝𐴕𐴞𐴤</p>" width="400" height="60"></iframe>
+  <p>Open shadow root:</p>
+  <div id="shadow-host"></div>
+</main>
+<script>
+
+const root = document.getElementById('shadow-host').attachShadow({ mode: 'open' });
+root.innerHTML = '<p id="in-shadow">𐴎𐴟𐴁𐴝𐴕 𐴓𐴠𐴑</p>';
+</script>
+</body>
+</html>

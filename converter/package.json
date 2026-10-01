@@ -1,0 +1,23 @@
+{
+  "name": "@abahziz0/rohingya-converter",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Offline Hanifi Rohingya ↔ Rohingyalish Unicode script converter and transliteration library.",
+  "license": "MIT",
+  "homepage": "https://rohingyalanguage.org/tools/script-converter/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abahziz0/rohingya-tools.git",
+    "directory": "converter"
+  },
+  "bugs": { "url": "https://github.com/abahziz0/rohingya-tools/issues" },
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": { "build": "tsc -p tsconfig.json && node scripts/copy-license.mjs" },
+  "engines": { "node": ">=24.15.0" },
+  "devDependencies": { "typescript": "^7.0.2" },
+  "keywords": ["rohingya", "hanifi-rohingya", "rohingyalish", "script-converter", "transliteration", "romanization", "unicode", "typescript"]
+}

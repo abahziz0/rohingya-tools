@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic feed — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Dynamic feed</h1>
+  <p class="controls">
+    <button id="add" type="button">Add a post</button>
+    <button id="auto" type="button" aria-pressed="false">Auto-load posts</button>
+    <button id="edit" type="button">Website edits post 1</button>
+    <button id="replace" type="button">Website replaces post 2</button>
+    <button id="bulk" type="button">Load 500 posts</button>
+  </p>
+  <p>Posts: <output id="count">0</output></p>
+  <section id="feed" aria-label="Feed"></section>
+</main>
+<script>
+
+const WORDS = ["𐴑𐴞𐴃𐴝𐴁", "𐴉𐴟𐴤𐴓", "𐴉𐴝𐴕𐴞𐴤", "𐴒𐴡𐴤𐴌", "𐴀𐴠𐴏𐴑𐴟𐴓", "𐴎𐴟𐴁𐴝𐴕", "𐴔𐴝𐴕𐴟𐴤𐴞𐴆", "𐴌𐴝𐴏𐴃𐴝", "𐴒𐴝𐴏", "𐴔𐴝𐴏", "𐴊𐴞𐴕", "𐴀𐴝𐴞𐴅𐴧𐴝", "𐴆𐴝𐴤𐴕𐴃𐴞", "𐴑𐴡𐴓𐴡𐴤𐴁", "𐴉𐴡𐴌𐴝𐴤", "𐴓𐴠𐴑"];
+const feed = document.getElementById('feed');
+let n = 0;
+function post() {
+  n++;
+  const a = document.createElement('article');
+  a.className = 'post';
+  const words = Array.from({ length: 6 }, (_, i) => WORDS[(n * 7 + i * 3) % WORDS.length]);
+  a.innerHTML = '<h2>Post ' + n + ' · ' + words[0] + '</h2><p>' + words.join(' ') + ' <a href="#p' + n + '">' + words[1] + '</a></p>';
+  feed.append(a);
+  document.getElementById('count').textContent = String(n);
+}
+for (let i = 0; i < 3; i++) post();
+document.getElementById('add').onclick = post;
+let timer = null;
+document.getElementById('auto').onclick = e => {
+  if (timer) { clearInterval(timer); timer = null; } else { timer = setInterval(post, 1000); }
+  e.currentTarget.setAttribute('aria-pressed', String(Boolean(timer)));
+};
+document.getElementById('edit').onclick = () => {
+  // The website updates the text node of post 1 with new Hanifi text.
+  const p = feed.querySelector('.post p');
+  p.firstChild.nodeValue = WORDS[3] + ' ' + WORDS[4] + ' ' + WORDS[5] + ' ';
+};
+document.getElementById('replace').onclick = () => {
+  // The website replaces post 2 with English content.
+  feed.querySelectorAll('.post')[1].querySelector('p').textContent = 'Replaced by the website at ' + new Date().toLocaleTimeString();
+};
+document.getElementById('bulk').onclick = () => { for (let i = 0; i < 500; i++) post(); };
+</script>
+</body>
+</html>

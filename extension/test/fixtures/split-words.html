@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Words split across elements — Rohingya Reader fixtures</title>
+<link rel="stylesheet" href="assets/fixtures.css">
+</head>
+<body>
+<p class="banner" dir="ltr" lang="en"><a href="index.html">All fixtures</a> · <strong>Test data.</strong> Hanifi on this page was generated from Rohingyalish examples with the shared converter. It checks technical behaviour only and is not reviewed Rohingya text.</p>
+
+<main>
+  <h1>Words split across inline elements</h1>
+  <table>
+    <thead><tr><th>Case</th><th>Page text</th><th>Engine output for the joined text</th></tr></thead>
+    <tbody>
+      <tr><td>Tone sign in its own element</td><td id="s1">𐴑𐴝<b>𐴤</b></td><td><code>ká</code></td></tr>
+      <tr><td>Carrier letter + vowel split by a link</td><td id="s2">𐴀<a href="#">𐴞𐴕</a></td><td><code>in</code></td></tr>
+      <tr><td>Gemination (tassi) split</td><td id="s3">𐴓<span class="hl">𐴧𐴝</span></td><td><code>lla</code></td></tr>
+      <tr><td>Every letter in its own span</td><td id="s4"><span class="hl">𐴑</span><span>𐴞</span><span class="hl">𐴃</span><span>𐴝</span><span class="hl">𐴁</span></td><td><code>kitab</code></td></tr>
+      <tr><td>Vowel + long-vowel sign split</td><td id="s5">𐴌𐴝<em>𐴥</em></td><td><code>raa</code></td></tr>
+      <tr><td>Separate blocks are never joined</td><td id="s6"><div>𐴑𐴝</div><div>𐴤</div></td><td><code>ka</code> / (stray sign skipped)</td></tr>
+    </tbody>
+  </table>
+</main>
+
+</body>
+</html>
