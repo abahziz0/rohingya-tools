@@ -17,6 +17,17 @@ Rohingya into English or another language.
 · **[Install Rohingya Reader from the Chrome Web Store](https://chromewebstore.google.com/detail/ojdnhefanlhaamffnpemofgligjbfngg)**
 · **[Visit RohingyaLanguage.org](https://rohingyalanguage.org/)**
 
+## Watch Rohingya Reader
+
+A 20-second introduction to the Chrome extension.
+
+[<img src="https://huggingface.co/spaces/rohingyalanguage/rohingya-script-converter/resolve/main/rohingya-reader-demo.jpg" alt="Watch the Rohingya Reader introduction video" width="270">](https://rohingyalanguage-rohingya-script-converter.static.hf.space/index.html#video)
+
+[Watch the video in the Hugging Face Space](https://huggingface.co/spaces/rohingyalanguage/rohingya-script-converter) ·
+[Download the original MP4](https://huggingface.co/spaces/rohingyalanguage/rohingya-script-converter/resolve/main/rohingya-reader-demo.mp4)
+
+Questions or feedback: [ab@rohingyalanguage.org](mailto:ab@rohingyalanguage.org).
+
 ## What is included
 
 | Tool | Purpose | Source |
@@ -117,6 +128,10 @@ Bug reports, reproducible conversion examples, accessibility improvements, and
 linguistic review are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before
 opening an issue or pull request. Report security concerns through the
 [security policy](SECURITY.md).
+
+## Contact
+
+For questions, feedback, and collaboration, email [ab@rohingyalanguage.org](mailto:ab@rohingyalanguage.org).
 
 ## Project and license
 
