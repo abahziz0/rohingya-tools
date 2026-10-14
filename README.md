@@ -133,6 +133,17 @@ opening an issue or pull request. Report security concerns through the
 
 For questions, feedback, and collaboration, email [ab@rohingyalanguage.org](mailto:ab@rohingyalanguage.org).
 
+## Maintainer and citation
+
+Maintained by **Abdul Aziz (AB Aziz)** at RohingyaLanguage.org.
+ORCID: [0009-0003-8386-3740](https://orcid.org/0009-0003-8386-3740).
+
+The archived **v0.1.0 software release** has DOI [10.5281/zenodo.23127932](https://doi.org/10.5281/zenodo.23127932).
+
+> RohingyaLanguage.org, & Aziz, A. (2026). *Rohingya Reader and Hanifi–Rohingyalish Script Converter: Chrome Extension and TypeScript Library* (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23127932
+
+The related [500-entry lexical sample](https://doi.org/10.5281/zenodo.22886278) is a separate dataset. See [Cite our work](https://rohingyalanguage.org/resources/cite-this/) for both resources and their citation details.
+
 ## Project and license
 
 Created and maintained by [RohingyaLanguage.org](https://rohingyalanguage.org/).
